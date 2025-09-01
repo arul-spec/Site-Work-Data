@@ -103,7 +103,7 @@
         <article class="card app" data-app>
           <h3>Daily Attendance</h3>
           <p>Mark in/out and enter vehicle km (if applicable).</p>
-          <a class="cta" href="https://script.google.com/macros/s/AKfycbywT7iSP89VEovEZ9885jThIJ97AgHQCMf6WDX2Ya2SxGMOwcgkacB79xMWHhjTwSsC/exec" target="_blank" rel="noopener noreferrer" aria-label="Open Daily Attendance">
+          <a class="cta" href="https://script.google.com/macros/s/AKfycbyJoMOZBGZztqzmJVpw2Bm3H1h3vKyjOjJzA7QzG9NYfT4s692_VLtvn7O6kvVXs_fT/exec" target="_blank" rel="noopener noreferrer" aria-label="Open Daily Attendance">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M4 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
               <path d="M12 4l8 8-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -205,19 +205,3 @@
       let deferredPrompt = null;
       const btn = document.getElementById('installBtn');
       window.addEventListener('beforeinstallprompt', (e) => {
-        e.preventDefault();
-        deferredPrompt = e;
-        btn.style.display = 'inline-flex';
-      });
-      btn.addEventListener('click', async () => {
-        if (!deferredPrompt) return;
-        deferredPrompt.prompt();
-        await deferredPrompt.userChoice;
-        btn.style.display = 'none';
-        deferredPrompt = null;
-      });
-      window.addEventListener('appinstalled', () => { btn.style.display = 'none'; });
-    })();
-  </script>
-</body>
-</html>
